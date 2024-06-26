@@ -1,5 +1,5 @@
 
-ul {
+/*ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -18,41 +18,277 @@ ul {
     padding: 14px 16px;
     text-decoration: none;
   }
-  
-  /* Change the link color to #111 (black) on hover */
+
   li a:hover {
     background-color: #f4c8ca;
   }
   .active {
-    background-color: #0478aa;
   }
-  * {
+ 
+    header-background {
+      background: linear-gradient(rgba(255, 254, 253, 0.7), rgba(255, 254, 253, 0.9)), 
+      url("https://i.pinimg.com/564x/ef/5d/56/ef5d567ad6d5d769ef16e3de411e6503.jpg") center center fixed;
+      background-size: cover;
+      text-align: center;
+      height: 100vh; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }}*/
+  
+ 
+  :root {
+   ---pink: #f4c8ca;
+}
+
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    scroll-behavior: smooth;
-    font-family:serif
-  }
-  :root {
-    --bg-color: #efeae5;
-    --second-bg-color: #ec92e6;
-    --text-color: #6d7973;
-    --main-color: #174194198;
-  }
+    font-family: serif;
+}
+
+*{
+margin: 0;
+box-sizing: border-box;
+font-family: serif;
+outline: none; border: none;
+text-decoration: none;
+text-transform: capitalize;
+transition: .2s linear;
+}
+
+header {
+  position: fixed;
+  top:0; left:0; right:0;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0.5rem 1rem #ffc8dd;
+}
+
+html {
+  font-size:70%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+}
+
+section{
+  padding: 2rem 9%;
+}
+
+.home{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: url(../BC2024-Portfolio/beach-house.jpg) no repeat;
+  background-size: cover;
+}
+
+header .logo{
+font-size: 3rem;
+color: #6d7973;
+}
+
+header .logo span{
+color:var(---pink);
+}
+
+header .navbar a{
+  font-size: 2rem;
+  padding: 0 1.5rem;
+  color:#84a98c;
+} 
+
+header .navbar a:hover{
+color: var(---pink);
+}
+
+header .icons a{
+  font-size: 3rem;
+  color: #d8e2dc;
+  margin-left: 2rem;
+}
+
+header .navbar a:hover{
+  color: var(---pink);
+}
+
+header .icons a{
+font-size: 3rem;
+color:#84a98c;
+margin-left: 2rem;
+}
+
+header .icons a:hover{
+  color:var(---pink);
+}
+
+header #toggler{
+  display: none;
+}
+
+header .fa-bars{
+  font-size: 3rem;
+  color:#84a98c;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  cursor: pointer;
+  border: .1rem solid azure;
+  display: none;
+}
+
+/*
+@media (max max-width:991px){
   html {
-    font-size: 80%;
-    overflow-x: hidden;
+    font-size:55%;
   }
-body{
-  background: var(--bg-color);
-  color: var(--text-color);
+  header{
+    padding: 2rem;
+  }
 }
-.header {
-  position:fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+
+@media (max max-width:768px){
+  header .fa-bars{
+    display: block;
+  }}
+
+  header .navbar{
+    position: absolute;
+    top: 0; left:0; right:0;
+  }*/
+/*}
+.header-background {
+    background: linear-gradient(rgba(255, 254, 253, 0.7), rgba(255, 254, 253, 0.9)), 
+                url("https://i.imgur.com/TAn6FWz.jpg") center center fixed;
+    background-size: cover;
+    text-align: center;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: serif;
+    font-size: 1.2rem;
+}
+
+.header-content img {
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+.header-content h1, .header-content p {
+    margin: 0.5rem 0;
+    font-family: serif;
+
+}
+
+#about {
+    background-color: #ffffff; 
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 40px;
+    border-radius: 0.5%;
+    text-align: center;
+}
+
+.profile-photo {
+    max-width: 40%;
+    height: auto; 
+    border-radius: 50%; 
+}
+
+#portfolio {
+    background-color: #eddbdf; 
+    padding: 15px;
+    border-radius: 0.5%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    display: inline-block;
+    line-height: 200px;
+}
+
+#contact {
+    background-color: #D5E2D3; 
+    padding: 15px;
+    border-radius: 0.5%;
+    text-align: center;
+}
+
+.td-btn {
+    padding: 12px 36px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+     background-color: #ffd7d6; 
+
+}
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
+
+
+h2 {
+    color: #333;
+    font-family: serif;
+    font-size: 2.3rem;
+}
+
+a {
+    color: #29a598;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #208479;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+  
+  .profile-photo {
+        width: 50%; 
+        margin: 0 auto; 
+    }
+}*/
+
+
