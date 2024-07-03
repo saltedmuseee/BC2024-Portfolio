@@ -1,44 +1,41 @@
-const gallery = document.querySelector('.gallery');
-const track = document.querySelector('.gallery-track');
-const cards = document.querySelectorAll('.card');
-const easing = 0.05;
-let startY = 0;
-let endY = 0;
-let raf;
+// Script.js 
+function validate() { 
+	let name = 
+		document.getElementById("name").value; 
+	let subject = 
+		document.getElementById("subject").value; 
+	let phone = 
+		document.getElementById("phone").value; 
+	let email = 
+		document.getElementById("email").value; 
+	let message = 
+		document.getElementById("message").value; 
+	let error_message = 
+		document.getElementById("error_message"); 
 
-const lerp = (start,end,t) => start * (1-t) + end * t;
+	error_message.style.padding = "10px"; 
 
-function updateScroll() {
-  startY = lerp(startY,endY,easing);
-  gallery.style.height = `${track.clientHeight}px`;
-  track.style.transform = `translateY(-${startY}px)`;
-  activateParallax();
-  raf = requestAnimationFrame(updateScroll);
-  if (startY.toFixed(1) === window.scrollY.toFixed(1)) cancelAnimationFrame(raf);
-}
+	let errors = []; 
 
-function startScroll() {
-  endY = window.scrollY; 
-  cancelAnimationFrame(raf);
-  raf = requestAnimationFrame(updateScroll);
-}
+	if (name.length < 5) { 
+		errors.push("Please Enter a valid Name");} 
+	if (subject.length < 10) { 
+		errors.push("Please Enter a Correct Subject");} 
+	if (isNaN(phone) || phone.length != 10) { 
+		errors.push("Please Enter a valid Phone Number");} 
+	if (email.indexOf("@") == -1 || email.length < 6) { 
+		errors.push( 
+			"Please Enter a valid Email");} 
+	if (message.length <= 40) { 
+		errors.push( 
+			"Please Enter More Than 40 Characters");} 
 
-function parallax(card) {
-  const wrapper = card.querySelector('.card-image-wrapper');
-  const diff = card.offsetHeight - wrapper.offsetHeight;
-  const {top} = card.getBoundingClientRect();
-  const progress = top / window.innerHeight;
-  const yPos = diff * progress;
-  wrapper.style.transform = `translateY(${yPos}px)`;
-}
-
-const activateParallax = () => cards.forEach(parallax);
-
-function init() {
-  activateParallax();
-  startScroll();
-}
-
-window.addEventListener('load',updateScroll,false);
-window.addEventListener('scroll',init,false);
-window.addEventListener('resize',updateScroll,false);
+	if (errors.length > 0) { 
+		error_message.innerHTML = 
+			errors.join("<br>"); 
+		return false;} 
+	else { 
+		alert( 
+			"Form Submitted Successfully!"); 
+		return true;}}
+<button onclick="console.log('hello');">Press me</button>
